@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CS392Project/RSSParser.swift"
-            timestampString = "439905010.269043"
+            timestampString = "440416234.580611"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
             landmarkName = "startParsingWithContentsOfURL(_:)"
             landmarkType = "5">
          </BreakpointContent>

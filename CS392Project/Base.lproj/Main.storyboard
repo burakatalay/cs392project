@@ -45,7 +45,7 @@
             </objects>
             <point key="canvasLocation" x="8" y="350"/>
         </scene>
-        <!--Root View Controller-->
+        <!--News-->
         <scene sceneID="NGW-bL-q7u">
             <objects>
                 <tableViewController clearsSelectionOnViewWillAppear="NO" id="bD2-Aa-hMB" customClass="TopicsTableViewController" customModule="CS392Project" customModuleProvider="target" sceneMemberID="viewController">
@@ -74,7 +74,7 @@
                             <outlet property="delegate" destination="bD2-Aa-hMB" id="qr2-eH-fUt"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="BZv-HB-lQE"/>
+                    <navigationItem key="navigationItem" title="News" id="BZv-HB-lQE"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EIS-rT-0l1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -99,7 +99,7 @@
         <!--Split View Controller-->
         <scene sceneID="kLP-mS-dwv">
             <objects>
-                <splitViewController id="rRG-F8-9Wt" sceneMemberID="viewController">
+                <splitViewController storyboardIdentifier="idSplitViewController" id="rRG-F8-9Wt" sceneMemberID="viewController">
                     <connections>
                         <segue destination="DLn-Qa-HEP" kind="relationship" relationship="masterViewController" id="NUp-rG-rFN"/>
                         <segue destination="Cqu-ho-5Zn" kind="relationship" relationship="detailViewController" id="e9p-rm-PvX"/>

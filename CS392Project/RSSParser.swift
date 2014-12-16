@@ -9,6 +9,7 @@
 import UIKit
 import Foundation
 
+
 @objc protocol XMLParserDelegate{
     func parsingWasFinished()
 }
@@ -37,7 +38,7 @@ class RSSParser: NSObject, NSXMLParserDelegate {
     }
     
     func parser(parser: NSXMLParser, foundCharacters string: String!) {
-        if currentElement == "title"  || currentElement == "link" {
+        if (currentElement == "title"  || currentElement == "link" ){
             foundCharacters += string
         }
     }
@@ -55,7 +56,23 @@ class RSSParser: NSObject, NSXMLParserDelegate {
             
             if currentElement == "pubDate" {
                 parsedDataArray.append(dataDictionary)
+                
+                foundCharacters = (foundCharacters as NSString).substringFromIndex(3)
+
             }
         }
+    }
+    
+    func parserDidEndDocument(parser: NSXMLParser) {
+        delegate?.parsingWasFinished()
+    }
+    
+    func parser(parser: NSXMLParser, parseErrorOccurred parseError: NSError!) {
+        println(parseError.description)
+    }
+    
+    
+    func parser(parser: NSXMLParser, validationErrorOccurred validationError: NSError!) {
+        println(validationError.description)
     }
 }

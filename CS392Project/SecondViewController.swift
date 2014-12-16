@@ -12,21 +12,13 @@ class SecondViewController: UIViewController {
 
     
     @IBOutlet weak var webView: UIWebView!
-    @IBOutlet weak var toolBar: UIToolbar!
-    @IBOutlet weak var barButton: UIBarButtonItem!
     
     var rssURL : NSURL!
     
     
-    @IBAction func publishButtonClicked(sender: AnyObject) {
-    }
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         webView.hidden = true
-        toolBar.hidden = true
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -38,9 +30,7 @@ class SecondViewController: UIViewController {
             
             if webView.hidden {
                 webView.hidden = false
-                toolBar.hidden = false
             }
-            
         }
     }
 
