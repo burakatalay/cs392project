@@ -18,7 +18,7 @@ class TopicsTableViewController: UITableViewController, XMLParserDelegate {
         let url = NSURL(string: "http://merlininkazani.com/rss.asp")
         rssParser = RSSParser()
         rssParser.delegate = self
-        rssParser.startParsingWithContentsOfURL(url!)
+        rssParser.startParsingURL(url!)
         
     }
     override func didReceiveMemoryWarning() {

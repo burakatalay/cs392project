@@ -43,10 +43,7 @@ class RSSParser: NSObject, NSXMLParserDelegate {
         }
     }
     
-   
-    
-    
-    func parserDidEndDocument(parser: NSXMLParser) {
+   func parserDidEndDocument(parser: NSXMLParser) {
         delegate?.parsingWasFinished()
     }
     
