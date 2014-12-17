@@ -26,7 +26,7 @@ class RSSParser: NSObject, NSXMLParserDelegate {
     
     var foundCharacters = ""
     
-    func startParsingWithContentsOfURL(rssURL: NSURL) {
+    func startParsingURL(rssURL: NSURL) {
         let parser = NSXMLParser(contentsOfURL: rssURL)!
         parser.delegate = self
         parser.parse()
@@ -43,25 +43,8 @@ class RSSParser: NSObject, NSXMLParserDelegate {
         }
     }
     
-    func parser(parser: NSXMLParser, didEndElement elementName: String!, namespaceURI: String!, qualifiedName qName: String!) {
-        if !foundCharacters.isEmpty {
-            
-            if elementName == "link"{
-                foundCharacters = (foundCharacters as NSString).substringFromIndex(3)
-            }
-            
-            dataDictionary[currentElement] = foundCharacters
-            
-            foundCharacters = ""
-            
-            if currentElement == "pubDate" {
-                parsedDataArray.append(dataDictionary)
-                
-                foundCharacters = (foundCharacters as NSString).substringFromIndex(3)
-
-            }
-        }
-    }
+   
+    
     
     func parserDidEndDocument(parser: NSXMLParser) {
         delegate?.parsingWasFinished()
