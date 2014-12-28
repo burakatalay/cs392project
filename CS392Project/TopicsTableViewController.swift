@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TopicsTableViewController: UITableViewController, XMLParserDelegate {
+class TopicsTableViewController: UITableViewController, XMLParserDelegate  {
     
     var rssParser : RSSParser!
     

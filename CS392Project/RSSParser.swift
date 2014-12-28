@@ -43,7 +43,20 @@ class RSSParser: NSObject, NSXMLParserDelegate {
         }
     }
     
-   func parserDidEndDocument(parser: NSXMLParser) {
+    func parser(parser: NSXMLParser, didEndElement elementName: String!, namespaceURI: String!, qualifiedName qName: String!) {
+        if !foundCharacters.isEmpty {
+            
+            if elementName == "link"{
+                foundCharacters = (foundCharacters as NSString).substringFromIndex(3)
+            }
+            
+            dataDictionary[currentElement] = foundCharacters
+            
+            foundCharacters = ""
+        }
+    }
+    
+    func parserDidEndDocument(parser: NSXMLParser) {
         delegate?.parsingWasFinished()
     }
     
