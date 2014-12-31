@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C80766EA1A51483A0085E5C9 /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80766E91A51483A0085E5C9 /* Feed.swift */; };
+		C80766EC1A514CAB0085E5C9 /* FeedsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80766EB1A514CAB0085E5C9 /* FeedsViewController.swift */; };
+		C80766EE1A5152980085E5C9 /* addFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80766ED1A5152980085E5C9 /* addFeedViewController.swift */; };
 		C88685C11A2711B700FCF4FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88685C01A2711B700FCF4FF /* AppDelegate.swift */; };
 		C88685C61A2711B700FCF4FF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C88685C41A2711B700FCF4FF /* Main.storyboard */; };
 		C88685C81A2711B700FCF4FF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C88685C71A2711B700FCF4FF /* Images.xcassets */; };
@@ -29,6 +32,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C80766E91A51483A0085E5C9 /* Feed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
+		C80766EB1A514CAB0085E5C9 /* FeedsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedsViewController.swift; sourceTree = "<group>"; };
+		C80766ED1A5152980085E5C9 /* addFeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = addFeedViewController.swift; sourceTree = "<group>"; };
 		C88685BB1A2711B700FCF4FF /* CS392Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CS392Project.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C88685BF1A2711B700FCF4FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C88685C01A2711B700FCF4FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -92,6 +98,9 @@
 				C88685E21A2712D100FCF4FF /* SecondViewController.swift */,
 				C88685E41A2712F700FCF4FF /* ContainerViewController.swift */,
 				C88685E61A27131B00FCF4FF /* RSSParser.swift */,
+				C80766E91A51483A0085E5C9 /* Feed.swift */,
+				C80766EB1A514CAB0085E5C9 /* FeedsViewController.swift */,
+				C80766ED1A5152980085E5C9 /* addFeedViewController.swift */,
 			);
 			path = CS392Project;
 			sourceTree = "<group>";
@@ -223,7 +232,10 @@
 			files = (
 				C88685E31A2712D100FCF4FF /* SecondViewController.swift in Sources */,
 				C88685E71A27131B00FCF4FF /* RSSParser.swift in Sources */,
+				C80766EE1A5152980085E5C9 /* addFeedViewController.swift in Sources */,
+				C80766EC1A514CAB0085E5C9 /* FeedsViewController.swift in Sources */,
 				C88685E11A27129600FCF4FF /* TopicsTableViewController.swift in Sources */,
+				C80766EA1A51483A0085E5C9 /* Feed.swift in Sources */,
 				C88685E51A2712F700FCF4FF /* ContainerViewController.swift in Sources */,
 				C88685C11A2711B700FCF4FF /* AppDelegate.swift in Sources */,
 			);
@@ -419,6 +431,7 @@
 				C88685DC1A2711B700FCF4FF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C88685DD1A2711B700FCF4FF /* Build configuration list for PBXNativeTarget "CS392ProjectTests" */ = {
 			isa = XCConfigurationList;
@@ -427,6 +440,7 @@
 				C88685DF1A2711B700FCF4FF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

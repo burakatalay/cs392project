@@ -83,16 +83,30 @@
         <!--Your Feeds-->
         <scene sceneID="li2-an-7ZK">
             <objects>
-                <tableViewController id="6jo-Rp-Kc9" sceneMemberID="viewController">
+                <tableViewController id="6jo-Rp-Kc9" customClass="FeedsViewController" customModule="CS392Project" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="99A-rj-08C">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="rCg-pJ-zxi">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FeedCell" textLabel="dLE-MO-NXE" detailTextLabel="l2L-Rl-LYr" style="IBUITableViewCellStyleValue2" id="FMX-h4-wQb">
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rCg-pJ-zxi" id="YBz-kS-CXj">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FMX-h4-wQb" id="dHe-6v-HGC">
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dLE-MO-NXE">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="l2L-Rl-LYr">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -104,19 +118,19 @@
                     <navigationItem key="navigationItem" title="Your Feeds" id="EGE-Km-tjw">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="jhP-M6-Ahb">
                             <connections>
-                                <segue destination="SCl-oS-HZS" kind="show" id="mZS-Io-qcH"/>
+                                <segue destination="SCl-oS-HZS" kind="show" identifier="addFeed" id="mZS-Io-qcH"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5CO-So-swF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-356" y="-978"/>
+            <point key="canvasLocation" x="-348" y="-1177"/>
         </scene>
-        <!--View Controller-->
+        <!--New Feed-->
         <scene sceneID="mrA-r8-DO8">
             <objects>
-                <viewController id="SCl-oS-HZS" sceneMemberID="viewController">
+                <viewController id="SCl-oS-HZS" customClass="addFeedViewController" customModule="CS392Project" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="06i-7D-xHR"/>
                         <viewControllerLayoutGuide type="bottom" id="aS8-3U-tWg"/>
@@ -125,23 +139,60 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Feed URL" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PjY-bk-3ML">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Feed URL" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PjY-bk-3ML">
                                 <rect key="frame" x="16" y="210" width="568" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="checkTextFields:" destination="SCl-oS-HZS" eventType="editingDidEnd" id="2Wo-Dg-xpv"/>
+                                    <action selector="checkTextFields:" destination="SCl-oS-HZS" eventType="editingChanged" id="uAz-vh-isF"/>
+                                </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Display Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aqs-on-xPt">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Display Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aqs-on-xPt">
                                 <rect key="frame" x="16" y="121" width="568" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="checkTextFields:" destination="SCl-oS-HZS" eventType="editingChanged" id="Spv-bf-YIG"/>
+                                    <action selector="checkTextFields:" destination="SCl-oS-HZS" eventType="editingDidEnd" id="edp-mS-xT0"/>
+                                </connections>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="PjY-bk-3ML" firstAttribute="top" secondItem="aqs-on-xPt" secondAttribute="bottom" constant="59" id="2TY-1L-nn9"/>
+                            <constraint firstItem="PjY-bk-3ML" firstAttribute="trailing" secondItem="fap-2D-2Ih" secondAttribute="trailingMargin" id="c7e-Tz-cyn"/>
+                            <constraint firstItem="aqs-on-xPt" firstAttribute="top" secondItem="06i-7D-xHR" secondAttribute="bottom" constant="57" id="cai-Kg-AF4"/>
+                            <constraint firstItem="PjY-bk-3ML" firstAttribute="leading" secondItem="fap-2D-2Ih" secondAttribute="leadingMargin" id="dEZ-L3-t38"/>
+                            <constraint firstItem="aqs-on-xPt" firstAttribute="leading" secondItem="fap-2D-2Ih" secondAttribute="leadingMargin" id="iJP-f8-pYw"/>
+                            <constraint firstItem="PjY-bk-3ML" firstAttribute="top" secondItem="aqs-on-xPt" secondAttribute="bottom" constant="59" id="jzI-BB-H46"/>
+                            <constraint firstItem="aqs-on-xPt" firstAttribute="trailing" secondItem="fap-2D-2Ih" secondAttribute="trailingMargin" id="o0d-e2-9rW"/>
+                        </constraints>
                     </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="New Feed" id="Odx-8h-Hm1">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="gmZ-u7-sjI">
+                            <connections>
+                                <action selector="cancelButtonTapped:" destination="SCl-oS-HZS" id="f7c-0K-EwQ"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="GEk-hy-IbS">
+                            <connections>
+                                <action selector="doneButtonTapped:" destination="SCl-oS-HZS" id="Jfh-VU-0iF"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="cancelButton" destination="gmZ-u7-sjI" id="y6T-PF-5CL"/>
+                        <outlet property="displayName" destination="aqs-on-xPt" id="vGq-DK-DKw"/>
+                        <outlet property="doneButton" destination="GEk-hy-IbS" id="X7Y-dR-X3v"/>
+                        <outlet property="feedURL" destination="PjY-bk-3ML" id="15m-SR-SIl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aLa-TB-VmC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="317" y="-979"/>
+            <point key="canvasLocation" x="623" y="-1177"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="aMx-kA-PF1">
@@ -157,7 +208,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qsw-Ix-j1K" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1176" y="-978"/>
+            <point key="canvasLocation" x="-1210" y="-1177"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="sJ9-df-kdp">
