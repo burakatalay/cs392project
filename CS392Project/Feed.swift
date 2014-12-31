@@ -9,8 +9,6 @@
 import Foundation
 
 class Feed {
-    var feeds = [Feed]()
-    
     let displayName: String
     let url: String
     
@@ -25,14 +23,5 @@ class Feed {
         dictionary["url"] = url
         return dictionary
     }
-    
-    func addMember(member: Feed) {
-        feeds.append(member)
-    }
-    
-    func deleteMember(index: Int) {
-        feeds.removeAtIndex(index)
-    }
-
 
 }

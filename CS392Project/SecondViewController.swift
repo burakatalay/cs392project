@@ -9,7 +9,7 @@
 import UIKit
 
 class SecondViewController: UIViewController {
-
+    var showFeedsVC: SecondViewController!
     
     @IBOutlet weak var webView: UIWebView!
     

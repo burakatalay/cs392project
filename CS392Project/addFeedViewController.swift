@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 class addFeedViewController: UIViewController {
-    var feed: Feed!
+    var feedsVC: TopicsTableViewController!
     
     @IBOutlet weak var doneButton: UIBarButtonItem!
     @IBOutlet weak var cancelButton: UIBarButtonItem!
@@ -20,7 +20,7 @@ class addFeedViewController: UIViewController {
     
     
     @IBAction func doneButtonTapped(sender: AnyObject) {
-        feed.addMember(Feed(displayName: displayName.text, url: feedURL.text))
+        feedsVC.feed.append(Feed(displayName: displayName.text, url: feedURL.text))
         self.navigationController?.popViewControllerAnimated(true)
     }
     

@@ -16,15 +16,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-    //    splitViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("idSplitViewController") as? UISplitViewController
-      //  splitViewController?.delegate = self
+     //   splitViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("idSplitViewController") as? UISplitViewController
+     //   splitViewController?.delegate = self
         
-      //  splitViewController?.preferredDisplayMode = UISplitViewControllerDisplayMode.AllVisible
+     //   splitViewController?.preferredDisplayMode = UISplitViewControllerDisplayMode.AllVisible
         
-        //let containerViewController : ContainerViewController = ContainerViewController()
-        //containerViewController.setEmbeddedViewController(splitViewController)
+     //   let containerViewController : ContainerViewController = ContainerViewController()
+     //   containerViewController.setEmbeddedViewController(splitViewController)
         
-        //window?.rootViewController = containerViewController
+     //   window?.rootViewController = containerViewController
         
         
         return true
