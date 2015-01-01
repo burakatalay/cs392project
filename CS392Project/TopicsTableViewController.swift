@@ -52,12 +52,12 @@ class TopicsTableViewController: UITableViewController  {
     */
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "addFeed" {
-            let addFeedVC = segue.destinationViewController as addFeedViewController
-            addFeedVC.feedsVC = self
-        } else {
+        if segue.identifier == "showFeed" {
             let showFeedVC = segue.destinationViewController as SecondViewController
             showFeedVC.showFeedsVC = showFeedVC
+        } else {
+            let addFeedVC = segue.destinationViewController as addFeedViewController
+            addFeedVC.feedsVC = self
         }
     }
     

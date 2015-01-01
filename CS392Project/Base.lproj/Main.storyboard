@@ -37,13 +37,14 @@
                             <constraint firstAttribute="centerY" secondItem="kD5-LQ-Ayf" secondAttribute="centerY" id="axJ-ZU-Abf"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="aco-Ta-hav"/>
                     <connections>
                         <outlet property="webView" destination="3UC-Vx-SuM" id="S1l-7a-pvV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7aU-mo-oaU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8" y="490"/>
+            <point key="canvasLocation" x="-12" y="100"/>
         </scene>
         <!--Your Feeds-->
         <scene sceneID="NGW-bL-q7u">
@@ -74,7 +75,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="Cqu-ho-5Zn" kind="show" identifier="showFeed" id="gct-KM-U4N"/>
+                                    <segue destination="Cqu-ho-5Zn" kind="show" identifier="showFeed" id="i49-x1-YKz"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -96,7 +97,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EIS-rT-0l1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="828" y="-312"/>
+            <point key="canvasLocation" x="828" y="-696"/>
         </scene>
         <!--New Feed-->
         <scene sceneID="mrA-r8-DO8">
@@ -163,7 +164,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aLa-TB-VmC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1546" y="-312"/>
+            <point key="canvasLocation" x="1572" y="-696"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="sJ9-df-kdp">
@@ -179,15 +180,15 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aw7-Fg-9Sr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8" y="-312"/>
+            <point key="canvasLocation" x="-12" y="-696"/>
         </scene>
         <!--Split View Controller-->
         <scene sceneID="kLP-mS-dwv">
             <objects>
                 <splitViewController storyboardIdentifier="idSplitViewController" id="rRG-F8-9Wt" sceneMemberID="viewController">
                     <connections>
-                        <segue destination="DLn-Qa-HEP" kind="relationship" relationship="masterViewController" id="NUp-rG-rFN"/>
-                        <segue destination="Cqu-ho-5Zn" kind="relationship" relationship="detailViewController" id="e9p-rm-PvX"/>
+                        <segue destination="DLn-Qa-HEP" kind="relationship" relationship="masterViewController" id="4hp-u9-Ng1"/>
+                        <segue destination="Cqu-ho-5Zn" kind="relationship" relationship="detailViewController" id="Eu8-fv-0K2"/>
                     </connections>
                 </splitViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JyJ-aw-Dx2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -196,6 +197,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="gct-KM-U4N"/>
+        <segue reference="Eu8-fv-0K2"/>
     </inferredMetricsTieBreakers>
 </document>
