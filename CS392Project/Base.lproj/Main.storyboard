@@ -44,7 +44,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7aU-mo-oaU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-12" y="100"/>
+            <point key="canvasLocation" x="813" y="50"/>
         </scene>
         <!--Your Feeds-->
         <scene sceneID="NGW-bL-q7u">
@@ -188,15 +188,31 @@
                 <splitViewController storyboardIdentifier="idSplitViewController" id="rRG-F8-9Wt" sceneMemberID="viewController">
                     <connections>
                         <segue destination="DLn-Qa-HEP" kind="relationship" relationship="masterViewController" id="4hp-u9-Ng1"/>
-                        <segue destination="Cqu-ho-5Zn" kind="relationship" relationship="detailViewController" id="Eu8-fv-0K2"/>
+                        <segue destination="6VE-cu-wug" kind="relationship" relationship="detailViewController" id="aaT-TC-uYU"/>
                     </connections>
                 </splitViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JyJ-aw-Dx2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-835" y="-312"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="hcc-zc-ziQ">
+            <objects>
+                <navigationController id="6VE-cu-wug" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="l3n-Vl-ca9">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Cqu-ho-5Zn" kind="relationship" relationship="rootViewController" id="TIy-5f-THL"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3GQ-WW-lrJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-12" y="144"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Eu8-fv-0K2"/>
+        <segue reference="i49-x1-YKz"/>
     </inferredMetricsTieBreakers>
 </document>
