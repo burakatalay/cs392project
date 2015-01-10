@@ -7,38 +7,70 @@
 //
 
 import UIKit
-import Foundation
+
+@objc protocol RSSParserDelegate{
+    func finishedParsing()
+}
 
 class RSSParser: NSObject, NSXMLParserDelegate {
     
+    var parsedDataArray = [Dictionary<String, String>]()
+    
+    var currentDictionary = Dictionary<String, String>()
+    
+    var currentElement = ""
+    
+    var foundCharacters = ""
+    
+    var delegate : RSSParserDelegate?
     
     
-    func parseFile(filename: String) {
-        var url = NSURL(string: "http://example.com/website-with-xml")
-        var xmlParser = NSXMLParser(contentsOfURL: url)!
-        xmlParser.delegate = self
-        xmlParser.parse()
+    func startParsingWithContentsOfURL(rssURL: NSURL) {
+        let parser = NSXMLParser(contentsOfURL: rssURL)!
+        parser.delegate = self
+        parser.parse()
+    }
+    
+    
+    func parserDidEndDocument(parser: NSXMLParser) {
+        delegate?.finishedParsing()
+    }
+    
+    
+    func parser(parser: NSXMLParser, didStartElement elementName: String!, namespaceURI: String!, qualifiedName qName: String!, attributes attributeDict: [NSObject : AnyObject]) {
+        
+        currentElement = elementName
+    }
+    
+    
+    func parser(parser: NSXMLParser, didEndElement elementName: String!, namespaceURI: String!, qualifiedName qName: String!) {
+        if !foundCharacters.isEmpty {
+            
+            currentDictionary[currentElement] = foundCharacters
+            
+            foundCharacters = ""
+            
+            if currentElement == "pubDate" {
+                parsedDataArray.append(currentDictionary)
+            }
         }
     }
     
     
-    func parserDidStartDocument(parser: NSXMLParser!) {
-        
+    func parser(parser: NSXMLParser, foundCharacters string: String!) {
+        if currentElement == "title"  || currentElement == "link" || currentElement == "pubDate"{
+            foundCharacters += string
+        }
     }
     
-    func parserDidEndDocument(parser: NSXMLParser!) {
-        
+    
+    func parser(parser: NSXMLParser, parseErrorOccurred parseError: NSError!) {
+        println(parseError.description)
     }
     
-    func parser(parser: NSXMLParser!, didStartElement elementName: String!, namespaceURI: String!, qualifiedName qName: String!, attributes attributeDict: [NSObject : AnyObject]!) {
-        
+    
+    func parser(parser: NSXMLParser, validationErrorOccurred validationError: NSError!) {
+        println(validationError.description)
     }
     
-    func parser(parser: NSXMLParser!, foundCharacters string: String!) {
-        
-    }
-    
-    func parser(parser: NSXMLParser!, didEndElement elementName: String!, namespaceURI: String!, qualifiedName qName: String!) {
-        
-    }
-    
+}

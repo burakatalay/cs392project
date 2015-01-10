@@ -8,46 +8,113 @@
 
 import UIKit
 
-class SecondViewController: UIViewController {
-    var showFeedsVC: SecondViewController!
+class SecondViewController: UIViewController, UIPopoverPresentationControllerDelegate {
+    var topicsVC: TopicsTableViewController!
+    var secondVC: SecondViewController!
+    
     
     @IBOutlet weak var webView: UIWebView!
+    @IBOutlet weak var toolBar: UIToolbar!
+    @IBOutlet weak var publishDateButton: UIBarButtonItem!
     
-    var rssURL : NSURL!
+    
+    var newsURL : NSURL!
+    
+    var publishDate : String!
+    
+    var newsButtonItem : UIBarButtonItem!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         webView.hidden = true
+        toolBar.hidden = true
+        
+        newsButtonItem = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.Plain, target: self, action: "showTutorialsViewController")
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("handleFirstViewControllerDisplayModeChangeWithNotification:"), name: "PrimaryVCDisplayModeChangeNotification", object: nil)
     }
+    
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        if rssURL != nil {
-            let request : NSURLRequest = NSURLRequest(URL: rssURL)
+        if newsURL != nil {
+            let request : NSURLRequest = NSURLRequest(URL: newsURL)
             webView.loadRequest(request)
             
             if webView.hidden {
                 webView.hidden = false
+                toolBar.hidden = false
+            }
+            
+            
+            if self.traitCollection.verticalSizeClass == UIUserInterfaceSizeClass.Compact{
+                toolBar.items?.insert(self.splitViewController!.displayModeButtonItem(), atIndex: 0)
             }
         }
     }
-
+    
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    deinit{
+        NSNotificationCenter.defaultCenter().removeObserver(self)
     }
-    */
-
+    
+    
+    
+    func showTutorialsViewController(){
+        splitViewController?.preferredDisplayMode = UISplitViewControllerDisplayMode.AllVisible
+    }
+    
+    
+    func handleFirstViewControllerDisplayModeChangeWithNotification(notification: NSNotification){
+        let displayModeObject = notification.object as? NSNumber
+        let nextDisplayMode = displayModeObject?.integerValue
+        
+        if toolBar.items?.count == 3{
+            toolBar.items?.removeAtIndex(0)
+        }
+        
+        if nextDisplayMode == UISplitViewControllerDisplayMode.PrimaryHidden.rawValue {
+            toolBar.items?.insert(newsButtonItem, atIndex: 0)
+        }
+        else{
+            toolBar.items?.insert(splitViewController!.displayModeButtonItem(), atIndex: 0)
+        }
+    }
+    
+    
+    
+    
+    
+    
+    @IBAction func showPublishDate(sender: AnyObject) {
+        var popoverViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("idPopoverViewController") as? PopoverViewController
+        
+        popoverViewController?.modalPresentationStyle = UIModalPresentationStyle.Popover
+        
+        popoverViewController?.popoverPresentationController?.delegate = self
+        
+        self.presentViewController(popoverViewController!, animated: true, completion: nil)
+        
+        popoverViewController?.popoverPresentationController?.barButtonItem = publishDateButton
+        popoverViewController?.popoverPresentationController?.permittedArrowDirections = .Any
+        popoverViewController?.preferredContentSize = CGSizeMake(200.0, 80.0)
+        
+        popoverViewController?.label.text = "Publish Date:\n\(publishDate)"
+        
+    }
+    
+    
+    
+    func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle {
+        return UIModalPresentationStyle.None
+    }
+    
 }

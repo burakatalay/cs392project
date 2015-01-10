@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 class addFeedViewController: UIViewController {
-    var feedsVC: TopicsTableViewController!
+    var feedsVC: FeedsViewController!
     
     @IBOutlet weak var doneButton: UIBarButtonItem!
     @IBOutlet weak var cancelButton: UIBarButtonItem!

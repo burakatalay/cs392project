@@ -12,19 +12,19 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDelegate {
 
     var window: UIWindow?
-    var splitViewController : UISplitViewController?
+    var splitViewController: UISplitViewController?
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-     //   splitViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("idSplitViewController") as? UISplitViewController
-     //   splitViewController?.delegate = self
+        splitViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("idSplitViewController") as? UISplitViewController
+        splitViewController?.delegate = self
         
-     //   splitViewController?.preferredDisplayMode = UISplitViewControllerDisplayMode.AllVisible
+        splitViewController?.preferredDisplayMode = UISplitViewControllerDisplayMode.AllVisible
         
-     //   let containerViewController : ContainerViewController = ContainerViewController()
-     //   containerViewController.setEmbeddedViewController(splitViewController)
+        let containerViewController : ContainerViewController = ContainerViewController()
+        containerViewController.setEmbeddedViewController(splitViewController)
         
-     //   window?.rootViewController = containerViewController
+        window?.rootViewController = containerViewController
         
         
         return true
@@ -51,6 +51,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
+    
+    func targetDisplayModeForActionInSplitViewController(svc: UISplitViewController) -> UISplitViewControllerDisplayMode {
+        return UISplitViewControllerDisplayMode.PrimaryHidden
+    }
+    
+    
+    func splitViewController(svc: UISplitViewController, willChangeToDisplayMode displayMode: UISplitViewControllerDisplayMode) {
+        NSNotificationCenter.defaultCenter().postNotificationName("PrimaryVCDisplayModeChangeNotification", object: NSNumber(integer: displayMode.rawValue))
+    }
+    
+
 
 
 }

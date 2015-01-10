@@ -10,7 +10,15 @@ import UIKit
 
 class ContainerViewController: UIViewController {
     
-     var viewController : UISplitViewController!
+    var viewController : UISplitViewController!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
     
     
     func setEmbeddedViewController(splitViewController: UISplitViewController!){
@@ -20,9 +28,9 @@ class ContainerViewController: UIViewController {
             self.addChildViewController(viewController)
             self.view.addSubview(viewController.view)
             viewController.didMoveToParentViewController(self)
-            self.setOverrideTraitCollection(UITraitCollection(horizontalSizeClass: UIUserInterfaceSizeClass.Regular), forChildViewController: viewController)
         }
     }
+    
     
     override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
         
@@ -34,17 +42,6 @@ class ContainerViewController: UIViewController {
         }
         
         super.viewWillTransitionToSize(size, withTransitionCoordinator: coordinator)
-    }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
 }
