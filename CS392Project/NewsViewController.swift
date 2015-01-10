@@ -8,9 +8,9 @@
 
 import UIKit
 
-class SecondViewController: UIViewController, UIPopoverPresentationControllerDelegate {
-    var topicsVC: TopicsTableViewController!
-    var secondVC: SecondViewController!
+class NewsViewController: UIViewController, UIPopoverPresentationControllerDelegate {
+    var topicsVC: TitlesTableViewController!
+    var secondVC: NewsViewController!
     
     
     @IBOutlet weak var webView: UIWebView!
@@ -32,7 +32,7 @@ class SecondViewController: UIViewController, UIPopoverPresentationControllerDel
         
         newsButtonItem = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.Plain, target: self, action: "showTutorialsViewController")
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("handleFirstViewControllerDisplayModeChangeWithNotification:"), name: "PrimaryVCDisplayModeChangeNotification", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("handleFirstViewControllerDisplayModeChangeWithNotification:"), name: "DisplayModeChangeNotification", object: nil)
     }
     
     

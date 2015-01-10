@@ -5,10 +5,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Second View Controller-->
+        <!--News View Controller-->
         <scene sceneID="m84-Jx-mid">
             <objects>
-                <viewController storyboardIdentifier="idSecondViewController" id="Cqu-ho-5Zn" customClass="SecondViewController" customModule="CS392Project" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="idNewsViewController" id="Cqu-ho-5Zn" customClass="NewsViewController" customModule="CS392Project" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="XJ2-Dj-gEZ"/>
                         <viewControllerLayoutGuide type="bottom" id="l8g-2N-0i7"/>
@@ -116,10 +116,10 @@
             </objects>
             <point key="canvasLocation" x="828" y="-696"/>
         </scene>
-        <!--Topics Table View Controller-->
+        <!--Titles Table View Controller-->
         <scene sceneID="sQW-ij-Vcx">
             <objects>
-                <tableViewController id="Jtv-g2-fs4" customClass="TopicsTableViewController" customModule="CS392Project" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="Jtv-g2-fs4" customClass="TitlesTableViewController" customModule="CS392Project" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="1AT-IW-lfD">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

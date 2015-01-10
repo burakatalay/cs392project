@@ -8,25 +8,23 @@
 
 import UIKit
 
-class TopicsTableViewController: UITableViewController, RSSParserDelegate {
-    var showFeedsVC: TopicsTableViewController!
+class TitlesTableViewController: UITableViewController, RSSParserDelegate {
+    var showFeedsVC: TitlesTableViewController!
     
     var rssParser : RSSParser!
     
     var feedsVC: FeedsViewController!
     
+    var url: String! = nil
+    
    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let url = NSURL(string: "http://www.forbes.com/intelligent-technology/index.xml")
+        let url = NSURL(string: self.url)
         rssParser = RSSParser()
         rssParser.delegate = self
         rssParser.startParsingWithContentsOfURL(url!)
     }
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -69,7 +67,7 @@ class TopicsTableViewController: UITableViewController, RSSParserDelegate {
         let tutorialLink = dictionary["link"]
         let publishDateString = dictionary["pubDate"]
         
-        let secondViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("idSecondViewController") as SecondViewController
+        let secondViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("idNewsViewController") as NewsViewController
         
         secondViewController.newsURL = NSURL(string: tutorialLink!)
         secondViewController.publishDate = publishDateString

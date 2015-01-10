@@ -58,7 +58,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     
     
     func splitViewController(svc: UISplitViewController, willChangeToDisplayMode displayMode: UISplitViewControllerDisplayMode) {
-        NSNotificationCenter.defaultCenter().postNotificationName("PrimaryVCDisplayModeChangeNotification", object: NSNumber(integer: displayMode.rawValue))
+        NSNotificationCenter.defaultCenter().postNotificationName("DisplayModeChangeNotification", object: NSNumber(integer: displayMode.rawValue))
     }
     
 

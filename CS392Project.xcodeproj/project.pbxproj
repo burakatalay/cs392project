@@ -14,8 +14,8 @@
 		C88685C81A2711B700FCF4FF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C88685C71A2711B700FCF4FF /* Images.xcassets */; };
 		C88685CB1A2711B700FCF4FF /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C88685C91A2711B700FCF4FF /* LaunchScreen.xib */; };
 		C88685D71A2711B700FCF4FF /* CS392ProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88685D61A2711B700FCF4FF /* CS392ProjectTests.swift */; };
-		C88685E11A27129600FCF4FF /* TopicsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88685E01A27129600FCF4FF /* TopicsTableViewController.swift */; };
-		C88685E31A2712D100FCF4FF /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88685E21A2712D100FCF4FF /* SecondViewController.swift */; };
+		C88685E11A27129600FCF4FF /* TitlesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88685E01A27129600FCF4FF /* TitlesTableViewController.swift */; };
+		C88685E31A2712D100FCF4FF /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88685E21A2712D100FCF4FF /* NewsViewController.swift */; };
 		C88685E51A2712F700FCF4FF /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88685E41A2712F700FCF4FF /* ContainerViewController.swift */; };
 		C88685E71A27131B00FCF4FF /* RSSParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88685E61A27131B00FCF4FF /* RSSParser.swift */; };
 		C8C9FE5D1A60160C00B22ED4 /* FeedsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C9FE5C1A60160C00B22ED4 /* FeedsViewController.swift */; };
@@ -44,8 +44,8 @@
 		C88685D01A2711B700FCF4FF /* CS392ProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CS392ProjectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C88685D51A2711B700FCF4FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C88685D61A2711B700FCF4FF /* CS392ProjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CS392ProjectTests.swift; sourceTree = "<group>"; };
-		C88685E01A27129600FCF4FF /* TopicsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicsTableViewController.swift; sourceTree = "<group>"; };
-		C88685E21A2712D100FCF4FF /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		C88685E01A27129600FCF4FF /* TitlesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitlesTableViewController.swift; sourceTree = "<group>"; };
+		C88685E21A2712D100FCF4FF /* NewsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		C88685E41A2712F700FCF4FF /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		C88685E61A27131B00FCF4FF /* RSSParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSSParser.swift; sourceTree = "<group>"; };
 		C8C9FE5C1A60160C00B22ED4 /* FeedsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedsViewController.swift; sourceTree = "<group>"; };
@@ -96,8 +96,8 @@
 				C88685C71A2711B700FCF4FF /* Images.xcassets */,
 				C88685C91A2711B700FCF4FF /* LaunchScreen.xib */,
 				C88685BE1A2711B700FCF4FF /* Supporting Files */,
-				C88685E01A27129600FCF4FF /* TopicsTableViewController.swift */,
-				C88685E21A2712D100FCF4FF /* SecondViewController.swift */,
+				C88685E01A27129600FCF4FF /* TitlesTableViewController.swift */,
+				C88685E21A2712D100FCF4FF /* NewsViewController.swift */,
 				C88685E41A2712F700FCF4FF /* ContainerViewController.swift */,
 				C88685E61A27131B00FCF4FF /* RSSParser.swift */,
 				C80766E91A51483A0085E5C9 /* Feed.swift */,
@@ -233,11 +233,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C88685E31A2712D100FCF4FF /* SecondViewController.swift in Sources */,
+				C88685E31A2712D100FCF4FF /* NewsViewController.swift in Sources */,
 				C88685E71A27131B00FCF4FF /* RSSParser.swift in Sources */,
 				C8C9FE5D1A60160C00B22ED4 /* FeedsViewController.swift in Sources */,
 				C80766EE1A5152980085E5C9 /* addFeedViewController.swift in Sources */,
-				C88685E11A27129600FCF4FF /* TopicsTableViewController.swift in Sources */,
+				C88685E11A27129600FCF4FF /* TitlesTableViewController.swift in Sources */,
 				C80766EA1A51483A0085E5C9 /* Feed.swift in Sources */,
 				C88685E51A2712F700FCF4FF /* ContainerViewController.swift in Sources */,
 				C8C9FE5F1A601A3200B22ED4 /* PopoverViewController.swift in Sources */,
