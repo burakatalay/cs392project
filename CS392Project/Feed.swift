@@ -17,7 +17,13 @@ class Feed {
         self.url = url
     }
     
-    func createDictionary() -> NSDictionary {
-        return ["displayName": self.displayName as String, "url": self.url as String]
+    func convertToDictionary() -> [String: String] {
+        var dictionary = [String: String]()
+        dictionary["displayName"] = displayName
+        dictionary["url"] = url
+        return dictionary
+        
+        
     }
+
 }

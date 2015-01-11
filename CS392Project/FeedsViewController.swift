@@ -11,6 +11,7 @@ import UIKit
 
 class FeedsViewController: UITableViewController {
     var feed: [Feed]!
+    var userFeeds: Feed!
     
     
     
@@ -23,7 +24,7 @@ class FeedsViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("FeedCell") as UITableViewCell
         let rssFeed = feed[indexPath.item]
-        cell.textLabel?.text = rssFeed.displayName
+        cell.detailTextLabel?.text = rssFeed.displayName
         
         return cell
     }
@@ -34,8 +35,11 @@ class FeedsViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         feed = [Feed]()
-        
-
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        if let loadedItems = userDefaults.arrayForKey("userFeeds") as? [String:String]{
+            feed = Feed(displayName: userFeeds.displayName, url: userFeeds.url)
+            
+        }
     }
     
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
@@ -43,6 +47,7 @@ class FeedsViewController: UITableViewController {
             var index = indexPath.item
             feed.removeAtIndex(index)
             self.tableView.reloadData()
+            saveInformation()
         }
     }
    
@@ -64,6 +69,14 @@ class FeedsViewController: UITableViewController {
             addFeedVC.feedsVC = self
         }
     }
-   
+    
+    func saveInformation() {
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        userDefaults.setObject(userFeeds?.convertToDictionary(), forKey: "userFeeds")
+    }
+    func addFeed(newFeed: Feed) {
+        feed.append(newFeed)
+        saveInformation()
+    }
 
 }

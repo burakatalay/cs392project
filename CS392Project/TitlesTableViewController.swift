@@ -17,7 +17,7 @@ class TitlesTableViewController: UITableViewController, RSSParserDelegate {
     
     var url: String! = nil
     
-   
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let url = NSURL(string: self.url)
@@ -28,7 +28,7 @@ class TitlesTableViewController: UITableViewController, RSSParserDelegate {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-
+    
     
     func finishedParsing() {
         self.tableView.reloadData()

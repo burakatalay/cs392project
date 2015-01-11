@@ -17,8 +17,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kD5-LQ-Ayf">
-                                <rect key="frame" x="279" y="289" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="No news was selected" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kD5-LQ-Ayf">
+                                <rect key="frame" x="16" y="289" width="568" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -41,15 +41,15 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="XYQ-rm-uMa" firstAttribute="centerX" secondItem="kD5-LQ-Ayf" secondAttribute="centerX" id="JJP-AT-8vG"/>
-                            <constraint firstItem="XYQ-rm-uMa" firstAttribute="top" secondItem="3UC-Vx-SuM" secondAttribute="bottom" constant="1" id="Xjy-vh-VIw"/>
-                            <constraint firstItem="XYQ-rm-uMa" firstAttribute="trailing" secondItem="3UC-Vx-SuM" secondAttribute="trailing" id="YDT-yT-oaJ"/>
-                            <constraint firstAttribute="centerX" secondItem="kD5-LQ-Ayf" secondAttribute="centerX" id="ZIm-s3-vfg"/>
-                            <constraint firstItem="3UC-Vx-SuM" firstAttribute="top" secondItem="rEK-lK-1lF" secondAttribute="top" id="aeV-Ri-S8t"/>
-                            <constraint firstAttribute="centerY" secondItem="kD5-LQ-Ayf" secondAttribute="centerY" id="axJ-ZU-Abf"/>
-                            <constraint firstItem="XYQ-rm-uMa" firstAttribute="bottom" secondItem="l8g-2N-0i7" secondAttribute="top" id="b0O-gg-1SF"/>
-                            <constraint firstItem="XYQ-rm-uMa" firstAttribute="leading" secondItem="3UC-Vx-SuM" secondAttribute="leading" id="iJ6-AR-9cE"/>
-                            <constraint firstItem="XYQ-rm-uMa" firstAttribute="leading" secondItem="rEK-lK-1lF" secondAttribute="leading" id="ikT-aO-i7M"/>
+                            <constraint firstItem="3UC-Vx-SuM" firstAttribute="centerX" secondItem="kD5-LQ-Ayf" secondAttribute="centerX" id="Ii6-YX-7U7"/>
+                            <constraint firstItem="XYQ-rm-uMa" firstAttribute="bottom" secondItem="l8g-2N-0i7" secondAttribute="top" id="Lj5-57-ELg"/>
+                            <constraint firstItem="kD5-LQ-Ayf" firstAttribute="leading" secondItem="rEK-lK-1lF" secondAttribute="leadingMargin" id="RSi-pL-17V"/>
+                            <constraint firstItem="3UC-Vx-SuM" firstAttribute="top" secondItem="rEK-lK-1lF" secondAttribute="top" id="YEi-XD-VjB"/>
+                            <constraint firstItem="XYQ-rm-uMa" firstAttribute="top" secondItem="3UC-Vx-SuM" secondAttribute="bottom" constant="1" id="bGl-m2-1Ua"/>
+                            <constraint firstItem="XYQ-rm-uMa" firstAttribute="leading" secondItem="3UC-Vx-SuM" secondAttribute="leading" id="ebL-XI-mhy"/>
+                            <constraint firstItem="kD5-LQ-Ayf" firstAttribute="trailing" secondItem="rEK-lK-1lF" secondAttribute="trailingMargin" id="miM-VZ-keb"/>
+                            <constraint firstItem="XYQ-rm-uMa" firstAttribute="leading" secondItem="rEK-lK-1lF" secondAttribute="leading" id="rca-Kf-TKV"/>
+                            <constraint firstItem="XYQ-rm-uMa" firstAttribute="trailing" secondItem="3UC-Vx-SuM" secondAttribute="trailing" id="xqx-HJ-6xR"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="aco-Ta-hav"/>
@@ -77,13 +77,13 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Gr0-oS-CDB" id="I91-nC-zUt">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xZ3-K1-b5a">
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xZ3-K1-b5a">
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="DjX-7j-uVE">
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="DjX-7j-uVE">
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
