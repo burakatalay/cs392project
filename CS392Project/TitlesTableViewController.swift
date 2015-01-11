@@ -35,6 +35,7 @@ class TitlesTableViewController: UITableViewController, RSSParserDelegate {
         
     }
     
+    
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
@@ -47,8 +48,7 @@ class TitlesTableViewController: UITableViewController, RSSParserDelegate {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("idCell", forIndexPath: indexPath) as UITableViewCell
         
-        let currentDictionary = rssParser.parsedDataArray[indexPath.row] as Dictionary<String, String>
-        
+        let currentDictionary = rssParser.parsedDataArray[indexPath.row] as [String:String]
         
         cell.textLabel?.text = currentDictionary["title"]
         
@@ -63,7 +63,7 @@ class TitlesTableViewController: UITableViewController, RSSParserDelegate {
     
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let dictionary = rssParser.parsedDataArray[indexPath.row] as Dictionary<String, String>
+        let dictionary = rssParser.parsedDataArray[indexPath.row] as [String:String]
         let tutorialLink = dictionary["link"]
         let publishDateString = dictionary["pubDate"]
         

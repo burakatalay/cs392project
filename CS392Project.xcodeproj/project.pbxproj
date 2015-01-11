@@ -96,6 +96,7 @@
 				C88685C71A2711B700FCF4FF /* Images.xcassets */,
 				C88685C91A2711B700FCF4FF /* LaunchScreen.xib */,
 				C88685BE1A2711B700FCF4FF /* Supporting Files */,
+				C8E98E941A630525008AB8AF /* TitlesTableViewController.swift */,
 				C88685E21A2712D100FCF4FF /* NewsViewController.swift */,
 				C88685E41A2712F700FCF4FF /* ContainerViewController.swift */,
 				C88685E61A27131B00FCF4FF /* RSSParser.swift */,
@@ -103,7 +104,6 @@
 				C80766ED1A5152980085E5C9 /* addFeedViewController.swift */,
 				C8C9FE5C1A60160C00B22ED4 /* FeedsViewController.swift */,
 				C8C9FE5E1A601A3200B22ED4 /* PopoverViewController.swift */,
-				C8E98E941A630525008AB8AF /* TitlesTableViewController.swift */,
 			);
 			path = CS392Project;
 			sourceTree = "<group>";

@@ -14,9 +14,9 @@ import UIKit
 
 class RSSParser: NSObject, NSXMLParserDelegate {
     
-    var parsedDataArray = [Dictionary<String, String>]()
+    var parsedDataArray = [[String:String]]()
     
-    var currentDictionary = Dictionary<String, String>()
+    var currentDictionary = [String:String]()
     
     var currentElement = ""
     
@@ -62,15 +62,4 @@ class RSSParser: NSObject, NSXMLParserDelegate {
             foundCharacters += string
         }
     }
-    
-    
-    func parser(parser: NSXMLParser, parseErrorOccurred parseError: NSError!) {
-        println(parseError.description)
-    }
-    
-    
-    func parser(parser: NSXMLParser, validationErrorOccurred validationError: NSError!) {
-        println(validationError.description)
-    }
-    
 }

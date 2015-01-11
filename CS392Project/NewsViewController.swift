@@ -30,9 +30,9 @@ class NewsViewController: UIViewController, UIPopoverPresentationControllerDeleg
         webView.hidden = true
         toolBar.hidden = true
         
-        newsButtonItem = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.Plain, target: self, action: "showTutorialsViewController")
+        newsButtonItem = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.Plain, target: self, action: "showTopicsTableViewController")
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("handleFirstViewControllerDisplayModeChangeWithNotification:"), name: "DisplayModeChangeNotification", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("firstVCDisplayModeChangeWithNotification:"), name: "DisplayModeChangeNotification", object: nil)
     }
     
     
@@ -68,12 +68,12 @@ class NewsViewController: UIViewController, UIPopoverPresentationControllerDeleg
     
     
     
-    func showTutorialsViewController(){
+    func showTopicsTableViewController(){
         splitViewController?.preferredDisplayMode = UISplitViewControllerDisplayMode.AllVisible
     }
     
     
-    func handleFirstViewControllerDisplayModeChangeWithNotification(notification: NSNotification){
+    func firstVCDisplayModeChangeWithNotification(notification: NSNotification){
         let displayModeObject = notification.object as? NSNumber
         let nextDisplayMode = displayModeObject?.integerValue
         
