@@ -36,10 +36,6 @@ class FeedsViewController: UITableViewController {
         super.viewDidLoad()
         feed = [Feed]()
         let userDefaults = NSUserDefaults.standardUserDefaults()
-        if let loadedItems = userDefaults.arrayForKey("userFeeds") as? [String:String]{
-            feed = Feed(displayName: userFeeds.displayName, url: userFeeds.url)
-            
-        }
     }
     
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
